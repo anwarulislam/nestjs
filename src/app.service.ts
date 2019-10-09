@@ -5,7 +5,7 @@ export class AppService {
   getHello(): object {
     return {
       app_name: 'ORFI',
-      api_version: 1.0
-    };
+      api_version: '1.0.0'
+    }
   }
 }

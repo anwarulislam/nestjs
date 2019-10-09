@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Post, Body } from '@nestjs/common';
 import { AuthService } from './auth.service';
 
 @Controller('auth')
@@ -25,7 +25,8 @@ export class AuthController {
     }
 
     @Post('/register')
-    registerUser() {
-        return this.auth.register()
+    async registerUser(@Body() body: any) {
+        let response = await this.auth.register(body)
+        return response
     }
 }
